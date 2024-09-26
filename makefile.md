@@ -17,10 +17,11 @@ make target_in_makefile
 
 - To see all target in makefile:
 - In makefile:
+  - create 1 target to show all target in makefile
 
 ```makefile
 help: # Show all commands
-    @egrep -h '\s#\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?# "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+    @grep -h '\s#\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?# "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 ```
 
 - After:

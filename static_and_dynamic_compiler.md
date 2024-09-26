@@ -81,7 +81,7 @@ gcc -c *.c # * => all file c
 - create the static library using:
 
 ```bash
-ar rcs libname.a *.o
+ar cr libname.a *.o
 ```
 
 - explain command:
@@ -92,13 +92,11 @@ ar rcs libname.a *.o
 - We can look at the function stored inside the library by using `ar -t lib(name).a`
   - ar: create, modify, and extract from archives
   - t: Display a table listing the contents of archive, or those of the files listed in member... that are present in the archive
-- to use libname.a => using command `gcc file.c -L. -l(name)`
+- to use libname.a => using command `gcc file.c -L. -l(name)` or `gcc file_exe file.c lib`
 
 ## Dynamic compiler
 
 - with the extension “.so” for dynamic libraries. Using libraries enable us to call functions without hard coding them inside the source code file as we can call a lot of different functions depending on the program we are creating.
-
--Trong bước liên kết của quá trình biên dịch, tên của thư viện động được đặt bên trong mã nhị phân để chương trình tải nó khi được gọi lần đầu tiên. Nội dung của kho lưu trữ được lập chỉ mục và tệp thực thi biết nơi để nhanh chóng tìm thấy hàm phù hợp.
 
 - How to create dynamic lib:
 
@@ -120,4 +118,4 @@ gcc -shared -o lib(name).so *.o
   - shared: Produce a shared object which can then be linked with other objects to form an executable.
   - o: Place output in file file.
 
-- To verify that we did it correctly and have the right functions as dynamic symbols we can use nm -D libname.so.
+- To verify that we did it correctly and have the right functions as dynamic symbols we can use `nm -D libname.so`.
