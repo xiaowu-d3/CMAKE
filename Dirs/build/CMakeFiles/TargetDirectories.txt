@@ -1,0 +1,3 @@
+/home/baiyuechu/Documents/Cmake/Dirs/build/CMakeFiles/testStudent.dir
+/home/baiyuechu/Documents/Cmake/Dirs/build/CMakeFiles/edit_cache.dir
+/home/baiyuechu/Documents/Cmake/Dirs/build/CMakeFiles/rebuild_cache.dir
